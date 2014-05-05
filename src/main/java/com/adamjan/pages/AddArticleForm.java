@@ -1,12 +1,17 @@
 package com.adamjan.pages;
 
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.ajax.markup.html.AjaxFallbackLink;
 import org.apache.wicket.markup.html.form.CheckBoxMultipleChoice;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextArea;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.form.upload.FileUpload;
 import org.apache.wicket.markup.html.form.upload.FileUploadField;
+import org.apache.wicket.markup.html.list.ListItem;
+import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
+import org.apache.wicket.model.LoadableDetachableModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.util.lang.Bytes;
 
@@ -38,16 +43,27 @@ import java.util.List;
  * THE SOFTWARE.
  */
 public class AddArticleForm extends TemplatePage {
-    private static final List<String> topics = Arrays.asList("Biomdeical Engineering",
-            "Chemistry and Pharmacy", "Civil Engineering");
+    private static final List<String> topics =
+            Arrays.asList(
+                    "Biomdeical Engineering",
+                    "Chemistry and Pharmacy",
+                    "Civil Engineering",
+                    "Military Engineering",
+                    "Zoo Engineering"
+            );
 
     private ArrayList<String> topicSelect = new ArrayList<>();
     private FileUploadField fileUpload;
 
+    private ArrayList<String> elems = new ArrayList<>(Arrays.asList("name"));
+
+
+    private ListView listView;
+
     public AddArticleForm() {
         add(new FeedbackPanel("feedback"));
 
-        Form<?> form = new Form<Void>("form") {
+        final Form<?> form = new Form<Void>("form") {
             @Override
             protected void onSubmit() {
                 FileUpload uploadedFile = fileUpload.getFileUpload();
@@ -63,11 +79,40 @@ public class AddArticleForm extends TemplatePage {
 
         form.add(new CheckBoxMultipleChoice<>("topics", new Model<>(topicSelect), topics));
         form.add(new TextField<>("keywords"));
-        form.add(new TextField<>("author"));
         form.add(new TextField<>("tittle"));
         form.add(new TextArea<>("summary"));
         form.add(new TextArea<>("comment"));
         form.add(fileUpload = new FileUploadField("fileUpload"));
+
+        form.add(listView = new ListView<String>("repeat", new LoadableDetachableModel<List<? extends String>>() {
+            @Override
+            protected List<? extends String> load() {
+                return elems;
+            }
+        }) {
+            @Override
+            protected void populateItem(ListItem item) {
+                item.add(new TextField<>("author"));
+                item.add(new AjaxFallbackLink<String>("remove_author") {
+                    @Override
+                    public void onClick(AjaxRequestTarget target) {
+                        elems.remove(0);
+                        target.add(form);
+                    }
+                });
+            }
+        });
+
+        form.setOutputMarkupId(true);
+
+        form.add(new AjaxFallbackLink<String>("add_author") {
+            @Override
+            public void onClick(AjaxRequestTarget target) {
+                elems.add("ss");
+                target.add(form);
+            }
+        });
+
         add(form);
     }
 }
