@@ -36,7 +36,7 @@ public class AccountModel implements Account {
     private int id;
 
     @Column(name = "user_name", length = 100, nullable = false)
-    private String name;
+    private String userName;
 
     @Column(name = "password", length = 100, nullable = false)
     private String password;
@@ -49,6 +49,41 @@ public class AccountModel implements Account {
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = RolesModel.class)
     private List<RolesModel> roles;
 
+    @Column(name = "organization", length = 250)
+    private String organization;
+    @Column(name = "departament", length = 250)
+    private String departament;
+    @Column(name = "tittle", length = 100)
+    private String tittle;
+    @Column(name = "occupation", length = 250)
+    private String occupation;
+    @Column(name = "names", length = 250)
+    private String name;
+    @Column(name = "surname", length = 250)
+    private String surname;
+    @Column(name = "address_first_line", length = 250)
+    private String addressFirstLine;
+    @Column(name = "address_second_line", length = 250)
+    private String addressSecondLine;
+    @Column(name = "zip_code", length = 20)
+    private String zipCode;
+    @Column(name = "city", length = 100)
+    private String city;
+    @Column(name = "province", length = 250)
+    private String province;
+    @Column(name = "country", length = 250)
+    private String country;
+    @Column(name = "telephone", length = 20)
+    private String telephone;
+    @Column(name = "fax", length = 20)
+    private String fax;
+    @Column(name = "email", length = 250)
+    private String email;
+    @Column(name = "hompage", length = 250)
+    private String hompage;
+    @Column(name = "additional_comment", length = 250)
+    private String additionalComment;
+
     public int getId() {
         return id;
     }
@@ -57,12 +92,12 @@ public class AccountModel implements Account {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -79,6 +114,142 @@ public class AccountModel implements Account {
 
     public void setRoles(List<RolesModel> roles) {
         this.roles = roles;
+    }
+
+    public String getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(String organization) {
+        this.organization = organization;
+    }
+
+    public String getDepartament() {
+        return departament;
+    }
+
+    public void setDepartament(String departament) {
+        this.departament = departament;
+    }
+
+    public String getTittle() {
+        return tittle;
+    }
+
+    public void setTittle(String tittle) {
+        this.tittle = tittle;
+    }
+
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getAddressFirstLine() {
+        return addressFirstLine;
+    }
+
+    public void setAddressFirstLine(String addressFirstLine) {
+        this.addressFirstLine = addressFirstLine;
+    }
+
+    public String getAddressSecondLine() {
+        return addressSecondLine;
+    }
+
+    public void setAddressSecondLine(String addressSecondLine) {
+        this.addressSecondLine = addressSecondLine;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public String getFax() {
+        return fax;
+    }
+
+    public void setFax(String fax) {
+        this.fax = fax;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getHompage() {
+        return hompage;
+    }
+
+    public void setHompage(String hompage) {
+        this.hompage = hompage;
+    }
+
+    public String getAdditionalComment() {
+        return additionalComment;
+    }
+
+    public void setAdditionalComment(String additionalComment) {
+        this.additionalComment = additionalComment;
     }
 
     @Override

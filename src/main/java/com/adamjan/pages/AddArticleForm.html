@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+    <div wicket:id="feedback"></div>
+
+    <div style="width: 500px; margin-bottom: 20px"
+         class="uk-container-center uk-panel uk-panel-box uk-panel-box-primary">
+        <form class="uk-form" wicket:id="form">
+            <table class="uk-table uk-table-hover">
+                <thead>
+                <tr>
+                    <td colspan="2" class="uk-text-large">
+                        Informacje o referencie
+                    </td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td colspan="2" class="uk-text-large">
+                        Informacje o Autorze(ach)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="uk-text-middle">Autor</td>
+                    <td>
+                        <label><input wicket:id="author" type="text"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="uk-text-large">
+                        Szczegóły zgłoszenia
+                    </td>
+                </tr>
+                <tr>
+                    <td class="uk-text-middle">Tytuł referratu</td>
+                    <td>
+                        <label><input wicket:id="tittle" type="text"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="uk-text-middle">Streszczenie</td>
+                    <td>
+                        <label><textarea wicket:id="summary" style="width: 250px; height: 250px;"></textarea></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="uk-text-middle">Słowa kluczowe</td>
+                    <td>
+                        <label><input wicket:id="keywords" type="text"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="uk-text-middle">Tematy</td>
+                    <td>
+                        <span wicket:id="topics"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="uk-text-middle">Komentarz lub wiadomości do Komitetu Programowego i Przewodniczących</td>
+                    <td>
+                        <label><textarea wicket:id="comment" style="width: 250px; height: 125px;"></textarea></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="uk-text-middle">Załącz plik</td>
+                    <td>
+                        <input wicket:id="fileUpload" type="file"/>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <button class="uk-button uk-button-success uk-container-center"
+                    style="display: block;" type="submit">
+                Prześlij artykół
+            </button>
+        </form>
+    </div>
+</wicket:extend>
+</body>
+</html>

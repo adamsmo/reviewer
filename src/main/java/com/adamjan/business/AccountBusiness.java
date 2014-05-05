@@ -57,4 +57,13 @@ public class AccountBusiness extends AbstractBusiness {
         a.setPassword(String.valueOf(random.nextDouble()));
         getSession().saveOrUpdate(a);
     }
+
+    public void saveAccount(AccountModel account) {
+        TCriteria<AccountModel> criteria = getCriteriaForClass(AccountModel.class);
+        Integer maxId = (Integer) criteria.getCriteria().setProjection(Projections.max("id")).uniqueResult();
+
+        account.setId(maxId + 1);
+
+        getSession().saveOrUpdate(account);
+    }
 }

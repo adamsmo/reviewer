@@ -9,6 +9,7 @@ import org.apache.wicket.authroles.authorization.strategies.role.annotations.Ann
 import org.apache.wicket.core.request.mapper.CryptoMapper;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
+import org.apache.wicket.util.time.Duration;
 import org.springframework.stereotype.Component;
 import org.wicketstuff.annotation.scan.AnnotatedMountScanner;
 
@@ -52,6 +53,10 @@ public class RootApplication extends AuthenticatedWebApplication {
         setRootRequestMapper(new CryptoMapper(getRootRequestMapper(), this));
 
         getSecuritySettings().setAuthorizationStrategy(new AnnotationsRoleAuthorizationStrategy(this));
+
+
+        //do deva
+        getResourceSettings().setResourcePollFrequency(Duration.ONE_SECOND);
 
         //mount login page at /login
         mountPage("/login", LoginPage.class);

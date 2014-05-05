@@ -1,6 +1,9 @@
 package com.adamjan.dto;
 
 import com.adamjan.common.Account;
+import com.adamjan.model.RolesModel;
+
+import java.util.List;
 
 /**
  * The MIT License
@@ -28,25 +31,174 @@ import com.adamjan.common.Account;
 public class AccountDto implements Account {
 
     private int id;
+    private String userName;
+    private String organization;
+    private String departament;
+    private String tittle;
+    private String occupation;
     private String name;
+    private String surname;
+    private String addressFirstLine;
+    private String addressSecondLine;
+    private String zipCode;
+    private String city;
+    private String province;
+    private String country;
+    private String telephone;
+    private String fax;
+    private String email;
+    private String hompage;
+    private String additionalComment;
 
-    @Override
     public int getId() {
         return id;
     }
 
-    @Override
     public void setId(int id) {
         this.id = id;
     }
 
-    @Override
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(String organization) {
+        this.organization = organization;
+    }
+
+    public String getDepartament() {
+        return departament;
+    }
+
+    public void setDepartament(String departament) {
+        this.departament = departament;
+    }
+
+    public String getTittle() {
+        return tittle;
+    }
+
+    public void setTittle(String tittle) {
+        this.tittle = tittle;
+    }
+
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
     public String getName() {
         return name;
     }
 
-    @Override
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getAddressFirstLine() {
+        return addressFirstLine;
+    }
+
+    public void setAddressFirstLine(String addressFirstLine) {
+        this.addressFirstLine = addressFirstLine;
+    }
+
+    public String getAddressSecondLine() {
+        return addressSecondLine;
+    }
+
+    public void setAddressSecondLine(String addressSecondLine) {
+        this.addressSecondLine = addressSecondLine;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public String getFax() {
+        return fax;
+    }
+
+    public void setFax(String fax) {
+        this.fax = fax;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getHompage() {
+        return hompage;
+    }
+
+    public void setHompage(String hompage) {
+        this.hompage = hompage;
+    }
+
+    public String getAdditionalComment() {
+        return additionalComment;
+    }
+
+    public void setAdditionalComment(String additionalComment) {
+        this.additionalComment = additionalComment;
     }
 }

@@ -1,0 +1,17 @@
+alter table account add column organization varchar(250);
+alter table account add column departament varchar(250);
+alter table account add column tittle varchar(100);
+alter table account add column occupation varchar (250);
+alter table account add column names varchar (250);
+alter table account add column surname varchar (250);
+alter table account add column address_first_line varchar (250);
+alter table account add column address_second_line varchar (250);
+alter table account add column zip_code varchar(20);
+alter table account add column city varchar (100);
+alter table account add column province varchar (250);
+alter table account add column country varchar (250);
+alter table account add column telephone varchar (20);
+alter table account add column fax varchar (20);
+alter table account add column email varchar (250);
+alter table account add column hompage varchar (250);
+alter table account add column additional_comment varchar (250);

@@ -5,6 +5,7 @@ import com.adamjan.dto.AccountDto;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
+import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.model.LoadableDetachableModel;
@@ -38,55 +39,18 @@ import java.util.List;
  */
 public class MainPage extends TemplatePage {
 
-    private String accName;
-    @SpringBean
-    private AccountBusiness accountBusiness;
-
     public MainPage() {
-        add(new Label("msg", "Hello"));
-
-        LoadableDetachableModel<List<AccountDto>> model = new LoadableDetachableModel<List<AccountDto>>() {
+        add(new Link<String>("registration_link") {
             @Override
-            protected List<AccountDto> load() {
-                return accountBusiness.getAllAccounts();
+            public void onClick() {
+                setResponsePage(RegistrationPage.class);
             }
-        };
-
-        ListView listView = new ListView<AccountDto>("repeater", model) {
+        });
+        add(new Link<String>("article_link") {
             @Override
-            protected void populateItem(ListItem item) {
-                AccountDto dto = getModelObject().get(item.getIndex());
-                item.add(new Label("label", dto.getName()));
+            public void onClick() {
+                setResponsePage(AddArticleForm.class);
             }
-        };
-        add(listView);
-
-        Form form = new Form<String>("form") {
-            @Override
-            protected void onSubmit() {
-                accountBusiness.addAccount(accName);
-                accName = null;
-            }
-        };
-
-        add(form);
-
-        form.add(new TextField<>("acc_name", new PropertyModel<>(this, "accName")));
-    }
-
-    public String getAccName() {
-        return accName;
-    }
-
-    public void setAccName(String accName) {
-        this.accName = accName;
-    }
-
-    public AccountBusiness getAccountBusiness() {
-        return accountBusiness;
-    }
-
-    public void setAccountBusiness(AccountBusiness accountBusiness) {
-        this.accountBusiness = accountBusiness;
+        });
     }
 }

@@ -1,6 +1,11 @@
 package com.adamjan.pages;
 
+import org.apache.wicket.markup.head.CssUrlReferenceHeaderItem;
+import org.apache.wicket.markup.head.IHeaderResponse;
+import org.apache.wicket.markup.head.JavaScriptUrlReferenceHeaderItem;
 import org.apache.wicket.markup.html.WebPage;
+
+import java.nio.charset.StandardCharsets;
 
 /**
  * The MIT License
@@ -26,4 +31,11 @@ import org.apache.wicket.markup.html.WebPage;
  * THE SOFTWARE.
  */
 public class TemplatePage extends WebPage {
+
+    @Override
+    public void renderHead(IHeaderResponse response) {
+        response.render(new CssUrlReferenceHeaderItem("css/uikit.almost-flat.css", null, null));
+        response.render(new JavaScriptUrlReferenceHeaderItem("js/jquery-2.1.0.js", "jquery-2.1.0.js", false, StandardCharsets.UTF_8.name(), null));
+        response.render(new JavaScriptUrlReferenceHeaderItem("js/uikit.js", "uikit.js", false, StandardCharsets.UTF_8.name(), null));
+    }
 }

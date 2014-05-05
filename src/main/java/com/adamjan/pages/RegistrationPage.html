@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+<div style="width: 500px; margin-bottom: 20px"
+     class="uk-container-center uk-panel uk-panel-box uk-panel-box-primary">
+<form class="uk-form" wicket:id="form">
+<table class="uk-table uk-table-hover">
+<thead>
+<tr>
+    <td colspan="2" class="uk-text-large">
+        Dane osobowe
+    </td>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td class="uk-text-middle">Organizacja/Firma</td>
+    <td>
+        <label><input wicket:id="organization" type="text"></label>
+    </td>
+</tr>
+<tr>
+    <td class="uk-text-middle">Dział</td>
+    <td>
+        <label><input wicket:id="departament" type="text"></label>
+    </td>
+</tr>
+<tr>
+    <td>Tytuł</td>
+    <td>
+        <div><label><input type="checkbox" wicket:id="Ms.">Pani</label></div>
+        <div><label><input type="checkbox" wicket:id="Mrs.">Pan</label></div>
+        <div><label><input type="checkbox" wicket:id="Prof.">Prof.</label></div>
+        <div><label><input type="checkbox" wicket:id="Dr">Dr</label></div>
+        <div><label><input type="checkbox" wicket:id="Hab.">Hab.</label></div>
+        <div><label><input type="checkbox" wicket:id="Mgr.">Mgr.</label></div>
+        <div><label><input type="checkbox" wicket:id="Inz.">Inż.</label></div>
+    </td>
+</tr>
+<tr>
+    <td class="uk-text-middle">Stanowisko</td>
+    <td>
+        <label><input wicket:id="occupation" type="text"></label>
+    </td>
+</tr>
+<tr>
+    <td class="uk-text-middle">Imiona</td>
+    <td>
+        <label><input wicket:id="name" type="text"></label>
+    </td>
+</tr>
+<tr>
+    <td class="uk-text-middle">Nazwisko</td>
+    <td>
+        <label><input wicket:id="surname" type="text"></label>
+    </td>
+</tr>
+<tr>
+    <td><br/></td>
+</tr>
+<tr>
+    <td class="uk-text-middle">Adres, Wiersz 1</td>
+    <td>
+        <label><input wicket:id="addressFirstLine" type="text"></label>
+    </td>
+</tr>
+<tr>
+    <td class="uk-text-middle">Adres, Wiersz 2</td>
+    <td>
+        <label><input wicket:id="addressSecondLine" type="text"></label>
+    </td>
+</tr>
+<tr>
+    <td class="uk-text-middle">Kod pocztowy</td>
+    <td>
+        <label><input wicket:id="zipCode" type="text"></label>
+    </td>
+</tr>
+<tr>
+    <td class="uk-text-middle">Miasto</td>
+    <td>
+        <label><input wicket:id="city" type="text"></label>
+    </td>
+</tr>
+<tr>
+    <td class="uk-text-middle">Wojewudztwo</td>
+    <td>
+        <label>
+            <select wicket:id="province"></select>
+        </label>
+    </td>
+</tr>
+<tr>
+    <td class="uk-text-middle">Kraj</td>
+    <td>
+        <label>
+            <select wicket:id="country">
+
+            </select>
+        </label>
+    </td>
+</tr>
+<tr>
+    <td class="uk-text-middle">Telefon*</td>
+    <td>
+        <label><input wicket:id="telephone" type="text"></label>
+    </td>
+</tr>
+<tr>
+    <td class="uk-text-middle">Faks</td>
+    <td>
+        <label><input wicket:id="fax" type="text"></label>
+    </td>
+</tr>
+<tr>
+    <td class="uk-text-middle">E-mail</td>
+    <td>
+        <label><input wicket:id="email" type="text"></label>
+    </td>
+</tr>
+<tr>
+    <td class="uk-text-middle">Strona domowa</td>
+    <td>
+        <label><input wicket:id="hompage" type="text"></label>
+    </td>
+</tr>
+<tr>
+    <td class="uk-text-middle">Komentarz użytkownika</td>
+    <td>
+        <label><input wicket:id="additionalComment" type="text"></label>
+    </td>
+</tr>
+<tr>
+    <br/>
+</tr>
+<tr>
+    <td colspan="2" class="uk-text-large">
+        Informacja o koncie
+    </td>
+</tr>
+<tr>
+    <td class="uk-text-middle">Nazwa użytkownika</td>
+    <td>
+        <label><input wicket:id="userName" type="text"></label>
+    </td>
+</tr>
+<tr>
+    <td class="uk-text-middle">Hasło</td>
+    <td>
+        <label><input wicket:id="password" type="password"></label>
+    </td>
+</tr>
+</tbody>
+</table>
+<button class="uk-button uk-button-success uk-container-center"
+        style="display: block;" type="submit">
+    Zarejestruj
+</button>
+</form>
+</div>
+</wicket:extend>
+</body>
+</html>
